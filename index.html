@@ -61,6 +61,8 @@
 				scene.background = new THREE.Color( 0x808080 );
 
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 10 );
+				camera.position.z = 500;
+
 
 				var geometry = new THREE.PlaneBufferGeometry( 4, 4 );
 				var material = new THREE.MeshStandardMaterial( {
@@ -178,13 +180,9 @@
 			}
 
 			function onSelectStart( event ) {
+				// https://stackoverflow.com/questions/38118697/move-camera-backwards-and-forwards-in-three-js
 				console.log('onSelectStart')
-				console.log
-				intervaltimer = setInterval(() => {
-					number += 30;
-					camera.position.set(number, 60 , 220);
-					renderer.render( scene, camera );
-				}, 300)
+				camera.position.z += 50;
 			}
 
 			function onSelectEnd( event ) {
