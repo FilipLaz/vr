@@ -178,6 +178,8 @@
 			}
 
 			function onSelectStart( event ) {
+				console.log('onSelectStart')
+				console.log
 				intervaltimer = setInterval(() => {
 					number += 30;
 					camera.position.set(number, 60 , 220);
@@ -186,6 +188,7 @@
 			}
 
 			function onSelectEnd( event ) {
+				console.log('onSelectEnd')
 				clearInterval(intervaltimer);
 			}
 
