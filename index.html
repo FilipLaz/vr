@@ -181,6 +181,7 @@
 				intervaltimer = setInterval(() => {
 					number += 30;
 					camera.position.set(number, 60 , 220);
+					renderer.render( scene, camera );
 				}, 300)
 			}
 
